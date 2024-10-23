@@ -1,0 +1,140 @@
+.page--pizza {
+  .cart {
+    background-color: transparent;
+    margin-top: 1.3em;
+    min-width: auto;
+    @include sm {
+      margin-bottom: 2em;
+    }
+    form {
+      @include xl {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.5em;
+      }
+      @include sm {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+    label {
+      margin-bottom: 0.7em;
+    }
+    .form-group {
+      margin-bottom: 3em;
+      @include xl {
+        margin-bottom: 0;
+      }
+    }
+    select,
+    button.select {
+      background-color: var(--black);
+    }
+  }
+  .pizza--wrapper {
+    padding-left: 50px;
+    @include xl {
+      padding-left: 0;
+    }
+    .pizza--draw {
+      height: 335px;
+      width: 335px;
+      border-radius: 50%;
+      background-image: linear-gradient(to right, #f3f3f3 50%, #eeeeee 50%);
+      margin: auto;
+      display: flex;
+      overflow: hidden;
+      @include xl {
+        height: 175px;
+        width: 175px;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+      img[src=""],
+      img[src="null"] {
+        display: none;
+      }
+      & > div {
+        width: 50%;
+      }
+    }
+    .dips {
+      margin: 50px auto;
+      @include scrollbar;
+      display: flex;
+      // justify-content: center;
+      gap: 1em;
+      max-width: 400px;
+      width: max-content;
+      max-width: 90%;
+      @include sm {
+        margin: 1.5em auto;
+      }
+      .item {
+        height: 75px;
+        width: 75px;
+        border-radius: 50%;
+        background-color: var(--color-ac);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        scroll-snap-align: start;
+        min-width: 75px;
+        @include sm {
+          height: 45px;
+          width: 45px;
+          min-width: 45px;
+          svg {
+            height: 35px;
+            width: auto;
+          }
+        }
+      }
+    }
+    .price--title {
+      text-align: center;
+      border: 1px solid var(--black);
+      border-left: 0;
+      border-right: 0;
+      padding: 0.5em 0;
+      max-width: 400px;
+      margin: auto;
+    }
+    .cart__wrapper {
+      @include addtocart;
+      background-color: var(--grey);
+      width: 30%;
+      &,
+      input {
+        color: var(--black);
+      }
+    }
+    .buttons {
+      margin-top: 4em;
+      gap: 2em;
+      @include xl {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        background-color: #fff;
+        z-index: 9;
+        padding: 20px 30px;
+      }
+      @include sm {
+        flex-wrap: wrap;
+        padding: 15px;
+        gap: 0.6em;
+      }
+      button {
+        flex-grow: 2;
+      }
+    }
+  }
+  aside:not(.cart) {
+    @include xl {
+      order: -1;
+    }
+  }
+}

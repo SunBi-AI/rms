@@ -1,0 +1,28 @@
+/*
+Font Family Imports
+*/
+
+@font-face {
+  font-family: Poppins;
+  src: url("../fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url("../fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url("../fonts/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+/*
+  Font Weights
+  */
+$font-light: 400;
+$font-medium: 500;
+$font-bold: 700;

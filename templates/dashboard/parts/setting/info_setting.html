@@ -1,0 +1,158 @@
+{% extends "dashboard/admin-base.html" %}
+{% block title %}Settings{% endblock title %}
+{% block beadcrumb %}Settings{% endblock beadcrumb %}
+{% block maintitle %}Settings{% endblock maintitle %}
+
+{% block content %}
+<div class="setting_container mt-3">
+    <div class="row justify-content-center">
+        <div class="col-md-11">
+            <div class="card">
+                <div class="card-body shadow-sm border-0">
+                    {% if messages %}
+                        <div class="mb-3">
+                            {% with messages=messages %}
+                                {% include 'dashboard/alert.html' %}
+                            {% endwith %}
+                        </div>
+                    {% endif %}
+                    <form action="{% url 'dashboard:aboutus' %}" method="post">
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <div class="row">
+                                <h2>About Us</h2>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="{{ about_form.about_title.id_for_label }}">About Title</label>
+                                        {{ about_form.about_title }}
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="{{ about_form.about_description.id_for_label }}">Description</label>
+                                        {{ about_form.about_description }}
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mt-3">
+                                    <div class="form-group">
+                                        <label class="form-label">About Image</label>
+                                        {% with name="about_image" image=about_form.about_image.value %}
+                                            {% include 'dashboard/image-picker.html' %}
+                                        {% endwith %}
+                                    </div>
+                                </div>
+                                {% comment %} <div class="col-md-6 mt-3">
+                                    <div class="form-group">
+                                        <label class="form-label">History Image</label>
+                                        {% with name="history_image" image=about_form.history_image.value %}
+                                            {% include 'dashboard/image-picker.html' %}
+                                        {% endwith %}
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="{{ about_form.history_text.id_for_label }}">History Text</label>
+                                        {{ about_form.history_text }}
+                                    </div>
+                                </div> {% endcomment %}
+
+                                <div class="row mt-3">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label" for="{{ about_form.owner_name.id_for_label }}">Owner Name</label>
+                                            {{ about_form.owner_name }}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label" for="{{ about_form.manager_name.id_for_label }}">Manager Name</label>
+                                            {{ about_form.manager_name }}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Owner Image</label>
+                                            {% with name="owner_img" image=about_form.owner_img.value %}
+                                                {% include 'dashboard/image-picker.html' %}
+                                            {% endwith %}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Manager Image</label>
+                                            {% with name="manager_img" image=about_form.manager_img.value %}
+                                                {% include 'dashboard/image-picker.html' %}
+                                            {% endwith %}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label" for="{{ about_form.fran_manager_name.id_for_label }}">Franchise Manager Name</label>
+                                            {{ about_form.fran_manager_name }}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label" for="{{ about_form.cook_name.id_for_label }}">Cook Name</label>
+                                            {{ about_form.cook_name }}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Franchise Manager Image</label>
+                                            {% with name="fran_manager_img" image=about_form.fran_manager_img.value %}
+                                                {% include 'dashboard/image-picker.html' %}
+                                            {% endwith %}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Cook Image</label>
+                                            {% with name="cook_img" image=about_form.cook_img.value %}
+                                                {% include 'dashboard/image-picker.html' %}
+                                            {% endwith %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% comment %} <div class="row mt-3">
+                                <div class="col-12">
+                                    <h2>Achievements</h2>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="{{ achievement_form.title.id_for_label }}">Achievement Title</label>
+                                        {{ achievement_form.title }}
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="{{ achievement_form.description.id_for_label }}">Achievement Description</label>
+                                        {{ achievement_form.description }}
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Achievement Image</label>
+                                        {% with name="achievement_image" image=achievement_form.image.value %}
+                                            {% include 'dashboard/image-picker.html' %}
+                                        {% endwith %}
+                                    </div>
+                                </div>
+                            </div> {% endcomment %}
+
+                        </div>
+
+                        <button type="submit" class="btn btn-success py-2 px-3">Update Settings</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

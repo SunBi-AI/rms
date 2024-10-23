@@ -1,0 +1,186 @@
+.contact-page {
+  .contact-box {
+    padding: 2em 0;
+    background-image: url(../img/contact-bck.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: 200px;
+    min-height: 600px;
+    @include flexer(flex-start, center);
+
+    @include md {
+      background-position-x: 100px;
+    }
+
+    @include sm {
+      background-position-x: unset;
+    }
+
+    .contact-form {
+      background-color: var(--white);
+      box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1);
+      padding: 2em;
+      width: 500px;
+
+      @include sm {
+        width: 90%;
+        margin: auto;
+      }
+
+      h2,
+      h3 {
+        font-size: 1.5em;
+      }
+
+      h3 {
+        color: var(--secondary-color);
+        font-weight: $font-bold;
+        margin-bottom: 1em;
+      }
+
+      form {
+        .form-group {
+          margin-bottom: 1em;
+          position: relative;
+          border: 1px solid var(--grey);
+          border-radius: 6px;
+          padding: 0.5em;
+
+          &:last-child {
+            margin-bottom: 0;
+            border: 0;
+            padding: 0;
+          }
+
+          label {
+            font-size: 0.8em;
+            display: inline-block;
+            position: absolute;
+            top: -10px;
+            background-color: var(--white);
+            padding: 0 1em;
+          }
+
+          input,
+          textarea {
+            border: 0;
+            background: transparent;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .infos {
+    margin: 1em 0;
+
+    .info-itm {
+      h3 {
+        font-size: 0.9em;
+        font-weight: $font-bold;
+      }
+
+      p {
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  .outlets {
+    .section-title {
+      margin-bottom: 2em;
+
+      h2 {
+        font-size: 0.9em;
+        font-weight: $font-bold;
+      }
+    }
+
+    .outlet-itm {
+      margin-bottom: 2em;
+
+      .outlet-title {
+        border-bottom: 1px solid var(--black);
+        padding-bottom: 1em;
+        margin-bottom: 1em;
+
+        h3 {
+          font-size: 1.1em;
+          font-weight: $font-bold;
+        }
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          a {
+            color: var(--black);
+          }
+        }
+      }
+    }
+  }
+
+  .meeting {
+    .meet-row {
+      background-color: var(--secondary-color);
+      @include flexer(space-between, center);
+
+      @include md {
+        padding: 1em;
+      }
+
+      @include md {
+        flex-wrap: wrap;
+      }
+
+      .info {
+        width: 280px;
+        margin-left: 70px;
+
+        @include md {
+          width: 49%;
+          margin-left: 0;
+        }
+
+        @include sm {
+          width: 100%;
+          margin-bottom: 1em;
+        }
+
+        span {
+          font-size: 1.4em;
+          font-weight: $font-bold;
+          color: var(--white);
+        }
+      }
+
+      .button {
+        flex-grow: 1;
+        text-align: center;
+
+        @include md {
+          width: 49%;
+        }
+
+        @include sm {
+          width: 100%;
+          margin-bottom: 1em;
+        }
+      }
+
+      .illus {
+        flex-grow: 1;
+        text-align: center;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

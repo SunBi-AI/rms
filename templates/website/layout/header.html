@@ -1,0 +1,142 @@
+{% load static %}
+<header class="header">
+  <div class="header__left">
+    <div class="search--box">
+      <form action="">
+        <div class="form-group">
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 15 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.875 11.875C9.63642 11.875 11.875 9.63642 11.875 6.875C11.875 4.11358 9.63642 1.875 6.875 1.875C4.11358 1.875 1.875 4.11358 1.875 6.875C1.875 9.63642 4.11358 11.875 6.875 11.875Z"
+              stroke="#414142"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M13.125 13.125L10.4062 10.4062"
+              stroke="#414142"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <input type="text" placeholder="What would you like to eat?" />
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="header__right">
+    <div class="mobile-nav">
+      <div id="ham">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <a href="#" class="logo" title="Mike Resturant">
+        <img src="{% static '{{settings.website_logo}}' %}" alt="Mike Resturant" />
+      </a>
+    </div>
+    <div class="user--actions">
+      <div class="buttons">
+        <button
+          class="btn btn-secondary d-inline-flex align-items-center"
+          data-bs-toggle="modal"
+          data-bs-target="#login"
+        >
+          <i class="lni lni-user text-white"></i>
+          <span class="membership">Membership</span>
+        </button>
+       </div>
+    </div>
+  </div>
+</header>
+
+<!--LoginSingup Modal -->
+<div
+  class="modal login-modal fade"
+  id="login"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12">
+          <div class="form">
+            <div class="signup active">
+              <h3>Sign Up</h3>
+              <form action="">
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="text" id="email" />
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" id="password" />
+                </div>
+                <div class="form-group">
+                  <label for="password2">Confirm Password</label>
+                  <input type="password" id="password2" />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="text" id="phone" />
+                </div>
+                <div class="form-group">
+                  <button class="btn">
+                    <span>Sign Up</span>
+                  </button>
+                  <small
+                    >Already a user? <span id="loginbtn">Login</span></small
+                  >
+                </div>
+              </form>
+            </div>
+            <div class="login">
+              <h3>Login</h3>
+              <form action="">
+                <div class="form-group">
+                  <label for="log_email">Email</label>
+                  <input type="text" id="log_email" />
+                </div>
+                <div class="form-group">
+                  <label for="log_password">Password</label>
+                  <input type="password" id="log_password" />
+                </div>
+                <div class="form-group">
+                  <button class="btn">
+                    <span>Sign Up</span>
+                  </button>
+                  <small
+                    >Don't have an account?
+                    <span id="signbtn">Signup</span></small
+                  >
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12">
+          <div class="sayings">
+            <div class="box">
+              <p>
+                Molestias in qui culpa. Voluptas deleniti autem natus
+                perferendis eum esse. Voluptatem ipsa vel
+              </p>
+              <span>-user76</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

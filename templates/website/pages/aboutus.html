@@ -1,0 +1,360 @@
+{% extends 'website/base.html' %} 
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+
+<div class="about-page">
+  <section class="carousel">
+    <div class="image-container">
+      <img src="{% static 'img/slider1.png' %}" class="active" />
+
+      <img src="{% static 'img/slider2.png' %}" />
+
+      <img src="{% static 'img/slider3.png' %}" />
+    </div>
+    <button class="prev slider-btn">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19 12H5"
+          stroke="#4F4F4F"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M12 19L5 12L12 5"
+          stroke="#4F4F4F"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+    <button class="next slider-btn">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 12H19"
+          stroke="#4F4F4F"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M12 5L19 12L12 19"
+          stroke="#4F4F4F"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+  </section>
+  <section class="introduction">
+    <div class="row">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+        <div class="intro__desc">
+          <h2 class="section--title">{{ about_settings.about_title }}</h2>
+          <p>
+            {{ about_settings.about_description }}
+          </p>
+        </div>
+      </div>
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+        <div class="intro__img">
+          <img src="{{website_logo}}" alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr />
+  {% comment %} <section class="history">
+    <div class="row">
+      <div class="col-xl-4">
+        <div class="intro__desc">
+          <h2 class="section--title">History</h2>
+          <div class="timeline">
+            <h2 class="title-small dots">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-circle-fill"
+                viewBox="0 0 16 16"
+              >
+                <circle cx="8" cy="8" r="8" />
+              </svg>
+            </h2>
+            <h2 class="title-small">Start</h2>
+            <h2 class="title-small active">1980</h2>
+            <h2 class="title-small">1985</h2>
+            <h2 class="title-small">1995</h2>
+            <h2 class="title-small">2000</h2>
+            <h2 class="title-small dots">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-circle-fill"
+                viewBox="0 0 16 16"
+              >
+                <circle cx="8" cy="8" r="8" />
+              </svg>
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-8">
+        <div class="tabs show">
+          <article>
+            <img src="{% static 'img/slider2.png' %}" alt="" />
+            <p>
+              Mike Resturant Restaurant is located in 29a Farthing Grove
+              Netherfield Milton Keynes MK6 4JH is the place for you and all you
+              need to do is decide what you want to eat. They have all those
+              favourites pizza such as Pizza American Hot, Pizza Chicken Tikka
+              etc
+            </p>
+          </article>
+        </div>
+        <div class="tabs">
+          <article>
+            <img src="{% static 'img/slider1.png' %}" alt="" />
+            <p>
+              Mike Resturant Restaurant is located in 29a Farthing Grove
+              Netherfield Milton Keynes MK6 4JH is the place for you and all you
+              need to do is decide what you want to eat. They have all those
+              favourites pizza such as Pizza American Hot, Pizza Chicken Tikka
+              etc
+            </p>
+          </article>
+        </div>
+        <div class="tabs">
+          <article>
+            <img src="{% static 'img/slider3.png' %}" alt="" />
+            <p>
+              Mike Resturant Restaurant is located in 29a Farthing Grove
+              Netherfield Milton Keynes MK6 4JH is the place for you and all you
+              need to do is decide what you want to eat. They have all those
+              favourites pizza such as Pizza American Hot, Pizza Chicken Tikka
+              etc
+            </p>
+          </article>
+        </div>
+        <div class="tabs">
+          <article>
+            <img src="{% static 'img/slider1.png' %}" alt="" />
+            <p>
+              Mike Resturant Restaurant is located in 29a Farthing Grove
+              Netherfield Milton Keynes MK6 4JH is the place for you and all you
+              need to do is decide what you want to eat. They have all those
+              favourites pizza such as Pizza American Hot, Pizza Chicken Tikka
+              etc
+            </p>
+          </article>
+        </div>
+        <div class="tabs">
+          <article>
+            <img src="{% static 'img/slider2.png' %}" alt="" />
+            <p>
+              Mike Resturant Restaurant is located in 29a Farthing Grove
+              Netherfield Milton Keynes MK6 4JH is the place for you and all you
+              need to do is decide what you want to eat. They have all those
+              favourites pizza such as Pizza American Hot, Pizza Chicken Tikka
+              etc
+            </p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section> {% endcomment %}
+
+  <section class="team">
+    <div class="section--title--wrapper">
+      <h2 class="section--title">Our Team</h2>
+      {% comment %} <a class="title--link">
+        <span>See all</span>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5 12H19"
+            stroke="#4F4F4F"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M12 5L19 12L12 19"
+            stroke="#4F4F4F"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a> {% endcomment %}
+    </div>
+    <div class="row">
+      <article class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+        <div class="card">
+          <div class="card__img">
+            <img src="{{ about_settings.owner_img }}" />
+          </div>
+          <h2 class="card__title">{{ about_settings.owner_name }}</h2>
+          <p>CEO/ Owner</p>
+        </div>
+      </article>
+      <article class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+        <div class="card">
+          <div class="card__img">
+            <img src="{{ about_settings.fran_manager_img }}" />
+          </div>
+          <h2 class="card__title">{{ about_settings.fran_manager_name }}</h2>
+          <p>Franchise Manager</p>
+        </div>
+      </article>
+      <article class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+        <div class="card">
+          <div class="card__img">
+            <img src="{{ about_settings.manager_img }}" />
+          </div>
+          <h2 class="card__title">{{ about_settings.manager_name }}</h2>
+          <p>CBranch Manager</p>
+        </div>
+      </article>
+      <article class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+        <div class="card">
+          <div class="card__img">
+            <img src="{{ about_settings.cook_img }}" />
+          </div>
+          <h2 class="card__title">{{ about_settings.cook_name }}</h2>
+          <p>Cook</p>
+        </div>
+      </article>
+    </div>
+  </section>
+  {% comment %} <section class="achievements">
+    <div class="section--title--wrapper">
+      <h2 class="section--title">Achievements</h2>
+      <a class="title--link">
+        <span>See all</span>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5 12H19"
+            stroke="#4F4F4F"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M12 5L19 12L12 19"
+            stroke="#4F4F4F"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+    </div>
+    <div class="card card--hr">
+      <div class="card__img">
+        <img src="{% static 'img/slider1.png' %}" alt="" />
+      </div>
+      <div class="title--wrapper">
+        <h2 class="card__title">Best Food in Town</h2>
+        <cite>-@foodiefoodie</cite>
+      </div>
+      <div class="card__body">
+        <p>
+          Mike Resturant Restaurant is located in 29a Farthing Grove Netherfield
+          Milton Keynes MK6 4JH is the place for you and all you need to do is
+          decide what you want to eat. They have all those favourites pizza such
+          as Pizza American Hot, Pizza Chicken Tikka etc
+        </p>
+      </div>
+    </div>
+    <div class="card card--hr">
+      <div class="card__img">
+        <img src="{% static 'img/slider2.png' %}" alt="" />
+      </div>
+      <div class="title--wrapper">
+        <h2 class="card__title">Amazing service.</h2>
+        <cite>-@renaultdrupak</cite>
+      </div>
+      <div class="card__body">
+        <p>
+          Mike Resturant Restaurant is located in 29a Farthing Grove Netherfield
+          Milton Keynes MK6 4JH is the place for you and all you need to do is
+          decide what you want to eat. They have all those favourites pizza such
+          as Pizza American Hot, Pizza Chicken Tikka etc
+        </p>
+      </div>
+    </div>
+  </section> {% endcomment %}
+</div>
+
+<script src="{% static 'js/customCarousel.js' %}"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    //timeline is
+    const timeline = document.querySelector(".timeline");
+    let top = 94;
+    timeline.scrollTop = top;
+
+    [...timeline.querySelectorAll(".title-small:not(.dots)")].map(
+      (elem, index) => {
+        elem.addEventListener("click", (e) => {
+          e.preventDefault();
+          let elemtop;
+          if (elem.nextElementSibling.classList.contains("active")) {
+            elemtop = timeline.scrollTop - top;
+            scrollTo(elemtop);
+            activeChange(elem, index);
+          } else if (elem.previousElementSibling.classList.contains("active")) {
+            elemtop = timeline.scrollTop + top;
+            scrollTo(elemtop);
+            activeChange(elem, index);
+          }
+        });
+
+        const activeChange = (elem, index) => {
+          timeline
+            .querySelector(".title-small.active")
+            .classList.remove("active");
+          elem.classList.add("active");
+          document.querySelector(".tabs.show").classList.remove("show");
+          document.querySelectorAll(".tabs")[index].classList.add("show");
+        };
+        const scrollTo = (top) => {
+          timeline.scrollTo({ top: top, behavior: "smooth" });
+        };
+      }
+    );
+  });
+</script>
+
+{% endblock %}

@@ -1,0 +1,189 @@
+.nav--left {
+  width: 15%;
+  min-width: 250px;
+  padding: $wrapper--padding 30px;
+  padding-left: 0 !important;
+  border-right: 1px solid #e5e5e5;
+  @include md {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    transition: 0.3s;
+    padding: 1em !important;
+    z-index: 190;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  &.show {
+    @include md {
+      left: 0;
+      background-color: var(--white);
+    }
+  }
+  .logo {
+    display: flex;
+    justify-content: center;
+    img {
+      height: 90px;
+      width: auto;
+    }
+  }
+  nav {
+    margin: 2em 0;
+    .nav-item {
+      margin: 0.3em 0;
+    }
+    .nav-link {
+      padding: 0.8em 1.2em;
+      color: var(--dark);
+      display: inline-flex;
+      width: 100%;
+      align-items: center;
+      gap: 20px;
+      @include border-radius;
+      // @include transition;
+      font-weight: $font-medium;
+
+      i {
+        font-size: 20px;
+      }
+      &:hover,
+      &.active {
+        background-color: var(--primary-color);
+      }
+
+      &.more {
+        background-color: transparent !important;
+        font-size: 0.8em;
+        opacity: 0.5;
+        svg {
+          margin-left: 1em;
+        }
+      }
+    }
+
+    //Droppe
+    .droppe {
+      border-style: dashed solid;
+      border-color: lightgray;
+      border-width: 1px;
+      border-radius: 8px;
+      padding: 1em;
+      font-size: 0.8em;
+      cursor: pointer;
+      position: relative;
+      .location {
+        @include flexer(space-between, center);
+      }
+      .location a {
+        color: var(--black);
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .location__arrow {
+        margin-left: 30px;
+      }
+      &.show {
+        .dropped {
+          display: block;
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+      .dropped {
+        background-color: #f1f1f1;
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+        border-radius: 8px;
+        width: 100%;
+        cursor: pointer;
+        transition: 0.3s;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        @include md {
+          left: 0;
+          top: 100%;
+        }
+        .dropped-itm {
+          padding: 0.5em 0;
+          ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            li {
+              padding: 1em;
+              &:last-child {
+                margin-bottom: 0;
+              }
+              a {
+                display: block;
+                text-align: left;
+                color: var(--black);
+                span {
+                  margin-right: 1em;
+                }
+              }
+              &.subdroppe {
+                position: relative;
+                transition: 0.3s;
+                &:hover {
+                  background-color: var(--primary-color);
+                }
+                // .sub-dropped {
+                //   background-color: #f4f4f4;
+                //   padding: 0.5em 0;
+                //   position: absolute;
+                //   display: none;
+                //   visibility: hidden;
+                //   opacity: 0;
+                //   background-color: var(--grey);
+                //   border-radius: 8px;
+                //   width: 100%;
+                //   cursor: pointer;
+                //   transition: 0.3s;
+                //   position: absolute;
+                //   left: 100%;
+                //   top: 0;
+                //   @include md {
+                //     position: unset;
+                //   }
+                // }
+                &.show {
+                  .sub-dropped {
+                    display: block;
+                    visibility: visible;
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .creator {
+    font-size: 0.8em;
+    a {
+      color: var(--black);
+    }
+  }
+
+  .app {
+    justify-content: space-between;
+    padding: 0 0.8em;
+    svg {
+      height: 28px;
+      width: auto;
+    }
+  }
+  .sticky {
+    position: sticky;
+    top: $wrapper--padding;
+    z-index: 2;
+  }
+}

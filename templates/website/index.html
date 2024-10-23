@@ -1,0 +1,116 @@
+{% extends 'website/base.html' %} 
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+  integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+<main class="home-page">
+  <section class="combos">
+    <div class="row">
+      <div class="col-12">
+      </div>
+    </div>
+    <div class="grid combo-grid">
+      <div class="combo--item curve-img">
+        <div class="top-slider owl-theme owl-carousel">
+          <div class="item">
+            <a href=""><img src="{{ settings.website_scrollimg1 }}" alt="Scroll Image 1"></a>
+          </div>
+          <div class="item">
+            <a href=""><img src="{{ settings.website_scrollimg2 }}" alt="Scroll Image 2"></a>
+          </div>
+          <div class="item">
+            <a href=""><img src="{{ settings.website_scrollimg3 }}" alt="Scroll Image 3"></a>
+          </div>
+          <div class="item">
+            <a href=""><img src="{{ settings.website_scrollimg4 }}" alt="Scroll Image 4"></a>
+          </div>
+          <div class="item">
+            <a href=""><img src="{{ settings.website_scrollimg5 }}" alt="Scroll Image 5"></a>
+          </div>
+          <div class="item">
+            <a href=""><img src="{{ settings.website_scrollimg6}}" alt="Scroll Image 6"></a>
+          </div>
+        </div>
+      </div>
+      <div class="combo--item curve-img">
+        <a href=""><img src="{{settings.website_feature1 }}" alt="Feature 1" /></a>
+      </div>
+      <div class="combo--item curve-img">
+        <a href=""><img src="{{settings.website_feature2}}" alt="Feature 2" /></a>
+      </div>
+      <div class="combo--item curve-img">
+        <a href=""><img src="{{settings.website_baner}}" alt="Baner image" /></a>
+      </div>
+    </div>
+  </section>
+
+<!--Try Our Menu-->
+  <section class="try">
+    <div class="row">
+      <div class="col-12">
+        <div class="title-bar">
+          <h2 class="section--title">Try Our Menu</h2>
+        </div>
+      </div>
+      {% for result in menu %}
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+        <div class="try-item curve-img">
+          <a href="#!"
+            ><figure><img src="{{ result.items_image }}" alt="" /></figure>
+            <figcaption>{{result.items_name}}</figcaption></a
+          >
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!--Intro-->
+  <section class="introduction">
+    <div class="row">
+      <div class="col-xl-6">
+        <div class="intro__desc">
+          <h2 class="section--title">{{ about_settings.about_title }}</h2>
+          <p>
+            {{ about_settings.about_description }}
+          </p>
+        </div>
+      </div>
+      <div class="col-xl-6">
+        <div class="intro__img curve-img">
+          <img src="{{ about_settings.about_image }}" alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+  
+</main>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+  integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script>
+  $(".top-slider").owlCarousel({
+    loop: true,
+    margin: 10,
+    dots: false,
+    items: 1,
+    nav: true,
+    autoplay: true,
+    autoplayHoverPause: true,
+  });
+</script>
+
+{% endblock %}

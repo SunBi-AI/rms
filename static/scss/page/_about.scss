@@ -1,0 +1,247 @@
+.about-page {
+  .introduction {
+    .intro__img {
+      text-align: center;
+      img {
+        height: 130px;
+        width: auto;
+        object-fit: contain;
+      }
+    }
+  }
+  section {
+    margin-bottom: 5em;
+  }
+}
+.carousel {
+  position: relative;
+  margin-bottom: 6em;
+  .image-container {
+    display: grid;
+    height: 300px;
+    width: 100%;
+    grid-template-columns: repeat(10, 100%);
+    grid-template-rows: 1fr;
+    @include scrollbar;
+    img {
+      @include image;
+    }
+  }
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    padding: 1em;
+    border: 0;
+    box-shadow: none;
+  }
+  .next {
+    right: -3.5em;
+    @include md {
+      display: none;
+    }
+  }
+  .prev {
+    left: -3.5em;
+    @include md {
+      display: none;
+    }
+  }
+}
+.history {
+  margin-top: 5em;
+  .intro__desc {
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 110px;
+      left: 50%;
+      transform: translateX(-50%);
+      height: calc(100% - 200px);
+      width: 1px;
+      border-left: 2px dashed var(--red);
+      opacity: 0.7;
+    }
+  }
+  .tabs {
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 2em;
+    }
+    display: block;
+    opacity: 1;
+    @include transition-in;
+    &:not(.show) {
+      display: none;
+      opacity: 0;
+    }
+  }
+}
+.team {
+  .card {
+    border: 0;
+    text-align: center;
+    img {
+      @include image;
+    }
+    .card__img {
+      height: 170px;
+      width: 170px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: auto;
+      margin-bottom: 1.2em;
+    }
+    .card__title {
+      font-size: 1.4em;
+      font-weight: $font-bold;
+      color: #000;
+    }
+  }
+}
+
+.achievements {
+  margin-bottom: 0;
+  .card--hr {
+    @include md {
+      flex-wrap: wrap;
+    }
+  }
+  .card {
+    border: 0;
+    height: 110px;
+    margin-bottom: 2em;
+    @include md {
+      height: auto;
+    }
+    img {
+      @include image;
+    }
+    .card__img {
+      width: 180px;
+      object-fit: cover;
+      min-width: 180px;
+      height: 100%;
+
+      img {
+        @include image;
+      }
+      @include md {
+        width: 49%;
+        img {
+          height: 140px;
+          object-fit: cover;
+        }
+      }
+      @include sm {
+        width: 100%;
+      }
+    }
+    .title--wrapper {
+      width: 300px;
+      padding: 6px 50px;
+      @include md {
+        width: 49%;
+      }
+      @include sm {
+        width: 100%;
+        padding: 1em 0;
+      }
+    }
+    .card__title {
+      font-size: 1.4em;
+      font-weight: $font-bold;
+      color: #000;
+    }
+    .card__body {
+      @include md {
+        width: 100%;
+        margin-top: 1em;
+      }
+    }
+    p {
+      @include lineclamp(4);
+    }
+  }
+}
+
+.timeline {
+  height: 400px;
+  scroll-snap-type: y mandatory;
+  overflow-y: hidden;
+  text-align: center;
+  position: relative;
+  & > * {
+    scroll-snap-align: start;
+  }
+  .title-small {
+    margin-bottom: 0;
+    padding: 35px 0;
+    @include transition;
+    cursor: pointer;
+    &.dots {
+      svg {
+        height: 1ch;
+        width: auto;
+      }
+      cursor: text;
+    }
+    &.active {
+      color: var(--red);
+      font-weight: $font-bold;
+      font-size: 10ch;
+      z-index: 3;
+      position: relative;
+      background-color: var(--white);
+      background-clip: content-box;
+      cursor: text;
+    }
+  }
+}
+
+.allergen {
+  @include flexer(center, center);
+  height: 100%;
+  svg {
+    stroke: var(--primary-color);
+    width: 100px;
+  }
+}
+
+.download__container {
+  margin: 1em 0;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      margin-bottom: 1em;
+      &:hover {
+        a {
+          img {
+            transform: translateX(4px) rotate(18deg);
+          }
+          span {
+            transform: translateX(4px);
+          }
+        }
+      }
+      a {
+        color: var(--black);
+        img {
+          height: 30px;
+          margin-right: 1em;
+          transition: 0.3s;
+        }
+        span {
+          border-bottom: 1px solid var(--black);
+          transition: 0.3s;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

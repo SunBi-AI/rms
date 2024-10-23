@@ -1,0 +1,107 @@
+@import "./var/colors";
+@import "./var/fonts";
+@import "./mixins";
+
+@import "./var/layouts";
+@import "./layouts/index";
+@import "./commonClass";
+
+//Importing Pages
+@import "./page/home";
+@import "./page/contact";
+@import "./page/menu";
+@import "./page/about";
+@import "./page/orderhistory";
+@import "./page/makeyourpizza.scss";
+
+/* --------------------------------------------------------
+version: 1.0
+last modified: 13.april.2021 by anjit and sonhang
+author1: Anjit Pariyar	
+email: anjitpariyar@gmail.com
+github: https://github.com/anjitzero
+author2: Sonahang rai	
+email: shonahangrae@gmail.com 
+github: https://github.com/sonangrai
+----------------------------------------------------------*/
+
+html,
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: $font-light;
+  scrollbar-width: thin;
+  font-size: 16px;
+  color: var(--black);
+  scroll-behavior: smooth;
+  font-size: 16px;
+  font-weight: $font-light;
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #f4f4f4;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #707070;
+    border-radius: 4px;
+  }
+}
+main {
+  background-color: var(--white);
+}
+.main--section {
+  display: flex;
+  width: 100%;
+  .main--right {
+    flex-grow: 2;
+    padding: $wrapper--padding;
+    padding-left: 5em;
+    width: calc(100% - 250px);
+    @include xl {
+      padding: 1.5em;
+      padding-left: 3em;
+    }
+    @include md {
+      padding-left: 0;
+      padding: 1.5em 0;
+    }
+  }
+}
+
+.wrapper {
+  width: 100%;
+  padding: 0 $wrapper--padding;
+  margin: 0 auto;
+  max-width: 1550px;
+  @include xl {
+    padding: 0 1.5em;
+  }
+}
+
+//Ios Button Fix
+button,
+.tab-item {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.filters {
+  .food__subcategory {
+    ul {
+      margin-top: 20px;
+      text-decoration: none;
+      list-style: none;
+      display: flex;
+      gap: 10px;
+    }
+    li {
+      text-decoration: none;
+    }
+    li a {
+      color: var(--black);
+      background-color: var(--primary-color);
+      padding: 15px 3px;
+      border-radius: 10px !important;
+    }
+  }
+}
