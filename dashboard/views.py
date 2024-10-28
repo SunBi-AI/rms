@@ -186,3 +186,31 @@ class DeleteView(View, DeleteHelper):
             "type": delete_type,
             "total": total_objects
         })
+
+class Items(View):
+    def post(request, *args, **kwargs):
+        menu_id = request.POST.get('menu_id', None)
+        items = request.POST.getlist('items', [])
+
+        if menu_id:
+            menu = MenuItem.objects.get(id=menu_id)
+            menu.items.clear()
+            for item_id in items:
+                menu.items.add(item_id)
+
+        return redirect('dashboard:menuedit', id=menu_id)
+    
+    def get(self, request, *args, **kwargs):
+        menu_id = kwargs.get('id', None)
+        menu = get_object_or_404(MenuItem, id=menu_id)
+        items = menu.items.all()
+        return render(request, 'dashboard/parts/items.html', {'menu': menu, 'items': items})
+    
+class ItemsListView(View):
+    def get(self, request, *args, **kwargs):
+        items = Item.objects.all()
+        paginator = Paginator(items, 10)
+        page_number = request.GET.get('page', 1)
+        page_obj = paginator.get_page(page_number)
+        return render(request, 'dashboard/item/list.html', {'items': page_obj})
+    
