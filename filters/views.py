@@ -11,7 +11,7 @@ from django.core.paginator import Paginator
 from menu.models import *
 from .models import *
 from django.db.models import Prefetch, Count
-from .forms import *
+from dashboard.forms import *
 
 class FilterView(View):
     def get(self, request, *args, **kwargs):
@@ -32,7 +32,7 @@ class SettingsView(View):
         form = SiteSettingsForm(request.POST, instance=settings)
         if form.is_valid():
             form.save()
-            return redirect('dashboard:settings')  # Make sure 'settings_view' is the correct URL name
+            return redirect('dashboard:settings') 
         return render(request, 'dashboard/parts/setting.html', {'form': form})
 
 class FilterSettingsView(View):
@@ -49,7 +49,7 @@ class FilterSettingsView(View):
         about_form = AboutSettingsForm(request.POST, instance=settings)
 
         if about_form.is_valid():
-            # If there is no settings instance, create one
+          
             about_form.save()
 
             return redirect('dashboard:settings')
