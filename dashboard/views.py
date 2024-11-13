@@ -214,3 +214,23 @@ class ItemsListView(View):
         page_obj = paginator.get_page(page_number)
         return render(request, 'dashboard/item/list.html', {'items': page_obj})
     
+
+class MenuItemCreateView(View):
+    def get(self, request, *args, **kwargs):
+        form = MenuItemForm()
+        return render(request, 'dashboard/parts/menu_item_form.html', {'form': form})
+
+    def post(self, request, *args, **kwargs):
+        form = MenuItemForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Menu item created successfully!")
+            return redirect('dashboard:menu_list') 
+        return render(request, 'dashboard/parts/menu_item_form.html', {'form': form})
+class MenuItemDetailView(View):
+    def get(self, request, *args, **kwargs):
+        menu_id = kwargs.get('id')
+        menu_item = get_object_or_404(MenuItem, id=menu_id)
+        return render(request, 'dashboard/parts/menu_item_detail.html', {'menu_item': menu_item})
+    
+
