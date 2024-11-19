@@ -1,6 +1,6 @@
 {% extends 'website/base.html' %} 
 {% load static %}
-{% block title %}Breakfast{% endblock title %}
+{% block title %}Mike Resturant - Breakfast{% endblock title %}
 
 {% block content %}
 
@@ -43,51 +43,136 @@
 
   <section class="menu-row">
     <div class="row">
-      {% for item in breakfast_items %}
-        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
-          <a class="menu-item" href="#!">
-            <figure>
-              <img src="{{item.items_image}}" alt="{{ item.items_name }}" />
-            </figure>
-            <div class="veg-no">
-                {% if item.sub_category|lower == "veg" %}
-                  <svg
-                      class="veg"
-                      width="23"
-                      height="22"
-                      viewBox="0 0 23 22"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                  >
-                      <circle cx="11.2315" cy="11" r="5" />
-                      <path
-                          d="M1.23149 2H21.2315V-2H1.23149V2ZM20.2315 1V21H24.2315V1H20.2315ZM21.2315 20H1.23149V24H21.2315V20ZM2.23149 21V1H-1.76851V21H2.23149ZM1.23149 20C1.78378 20 2.23149 20.4477 2.23149 21H-1.76851C-1.76851 22.6569 -0.425362 24 1.23149 24V20ZM20.2315 21C20.2315 20.4477 20.6792 20 21.2315 20V24C22.8883 24 24.2315 22.6569 24.2315 21H20.2315ZM21.2315 2C20.6792 2 20.2315 1.55229 20.2315 1H24.2315C24.2315 -0.656855 22.8883 -2 21.2315 -2V2ZM1.23149 -2C-0.425364 -2 -1.76851 -0.656853 -1.76851 1H2.23149C2.23149 1.55228 1.78378 2 1.23149 2V-2Z"
-                      />
-                  </svg>
-                {% else %}
-                  <svg
-                      class="nonveg"
-                      width="23"
-                      height="22"
-                      viewBox="0 0 23 22"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                  >
-                      <circle cx="11.2315" cy="11" r="5" />
-                      <path
-                          d="M1.23149 2H21.2315V-2H1.23149V2ZM20.2315 1V21H24.2315V1H20.2315ZM21.2315 20H1.23149V24H21.2315V20ZM2.23149 21V1H-1.76851V21H2.23149ZM1.23149 20C1.78378 20 2.23149 20.4477 2.23149 21H-1.76851C-1.76851 22.6569 -0.425362 24 1.23149 24V20ZM20.2315 21C20.2315 20.4477 20.6792 20 21.2315 20V24C22.8883 24 24.2315 22.6569 24.2315 21H20.2315ZM21.2315 2C20.6792 2 20.2315 1.55229 20.2315 1H24.2315C24.2315 -0.656855 22.8883 -2 21.2315 -2V2ZM1.23149 -2C-0.425364 -2 -1.76851 -0.656853 -1.76851 1H2.23149C2.23149 1.55228 1.78378 2 1.23149 2V-2Z"
-                      />
-                  </svg>
-                {% endif %}
-            </div>
-
-            <div class="menu-infos">
-              <h3>{{ item.items_name }}</h3>
-              <h2><span>Rs. </span><strong id="target-mozzerella">{{ item.items_price }}</strong></h2>
-            </div>
-          </a>
-        </div>
-      {% endfor %}
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+        <a class="menu-item" href="#!">
+          <figure>
+            <img src="{% static 'img/menu1.png' %}" alt="" />
+          </figure>
+          <div class="veg-no">
+            <svg
+              class="veg"
+              width="23"
+              height="22"
+              viewBox="0 0 23 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="11.2315" cy="11" r="5" />
+              <path
+                d="M1.23149 2H21.2315V-2H1.23149V2ZM20.2315 1V21H24.2315V1H20.2315ZM21.2315 20H1.23149V24H21.2315V20ZM2.23149 21V1H-1.76851V21H2.23149ZM1.23149 20C1.78378 20 2.23149 20.4477 2.23149 21H-1.76851C-1.76851 22.6569 -0.425362 24 1.23149 24V20ZM20.2315 21C20.2315 20.4477 20.6792 20 21.2315 20V24C22.8883 24 24.2315 22.6569 24.2315 21H20.2315ZM21.2315 2C20.6792 2 20.2315 1.55229 20.2315 1H24.2315C24.2315 -0.656855 22.8883 -2 21.2315 -2V2ZM1.23149 -2C-0.425364 -2 -1.76851 -0.656853 -1.76851 1H2.23149C2.23149 1.55228 1.78378 2 1.23149 2V-2Z"
+              />
+            </svg>
+          </div>
+          <div class="menu-infos">
+            <h3>Mozzerella Pizza</h3>
+            <h2><span>Rs. </span><strong id="target-mozzerella">550</strong></h2>
+          </div>
+        </a>
+      </div>
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+        <a class="menu-item" href="#!">
+          <figure>
+            <img src="{% static 'img/menu2.png' %}" alt="" />
+          </figure>
+          <div class="veg-no">
+            <svg
+              class="nonveg"
+              width="23"
+              height="22"
+              viewBox="0 0 23 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="11.2315" cy="11" r="5" />
+              <path
+                d="M1.23149 2H21.2315V-2H1.23149V2ZM20.2315 1V21H24.2315V1H20.2315ZM21.2315 20H1.23149V24H21.2315V20ZM2.23149 21V1H-1.76851V21H2.23149ZM1.23149 20C1.78378 20 2.23149 20.4477 2.23149 21H-1.76851C-1.76851 22.6569 -0.425362 24 1.23149 24V20ZM20.2315 21C20.2315 20.4477 20.6792 20 21.2315 20V24C22.8883 24 24.2315 22.6569 24.2315 21H20.2315ZM21.2315 2C20.6792 2 20.2315 1.55229 20.2315 1H24.2315C24.2315 -0.656855 22.8883 -2 21.2315 -2V2ZM1.23149 -2C-0.425364 -2 -1.76851 -0.656853 -1.76851 1H2.23149C2.23149 1.55228 1.78378 2 1.23149 2V-2Z"
+              />
+            </svg>
+          </div>
+          <div class="menu-infos">
+            <h3>Becon Pizza</h3>
+            <h2><span>Rs. </span><strong id="target-becon">550</strong></h2>
+          </div>
+        </a>
+      </div>
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+        <a class="menu-item" href="#!">
+          <figure>
+            <img src="{% static 'img/menu2.png' %}" alt="" />
+          </figure>
+          <div class="veg-no">
+            <svg
+              class="nonveg"
+              width="23"
+              height="22"
+              viewBox="0 0 23 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="11.2315" cy="11" r="5" />
+              <path
+                d="M1.23149 2H21.2315V-2H1.23149V2ZM20.2315 1V21H24.2315V1H20.2315ZM21.2315 20H1.23149V24H21.2315V20ZM2.23149 21V1H-1.76851V21H2.23149ZM1.23149 20C1.78378 20 2.23149 20.4477 2.23149 21H-1.76851C-1.76851 22.6569 -0.425362 24 1.23149 24V20ZM20.2315 21C20.2315 20.4477 20.6792 20 21.2315 20V24C22.8883 24 24.2315 22.6569 24.2315 21H20.2315ZM21.2315 2C20.6792 2 20.2315 1.55229 20.2315 1H24.2315C24.2315 -0.656855 22.8883 -2 21.2315 -2V2ZM1.23149 -2C-0.425364 -2 -1.76851 -0.656853 -1.76851 1H2.23149C2.23149 1.55228 1.78378 2 1.23149 2V-2Z"
+              />
+            </svg>
+          </div>
+          <div class="menu-infos">
+            <h3>Cheese Pizza</h3>
+            <h2><span>Rs. </span><strong id="target-cheese">550</strong></h2>
+          </div>
+        </a>
+      </div>
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+        <a class="menu-item" href="#!">
+          <figure>
+            <img src="{% static 'img/menu2.png' %}" alt="" />
+          </figure>
+          <div class="veg-no">
+            <svg
+              class="nonveg"
+              width="23"
+              height="22"
+              viewBox="0 0 23 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="11.2315" cy="11" r="5" />
+              <path
+                d="M1.23149 2H21.2315V-2H1.23149V2ZM20.2315 1V21H24.2315V1H20.2315ZM21.2315 20H1.23149V24H21.2315V20ZM2.23149 21V1H-1.76851V21H2.23149ZM1.23149 20C1.78378 20 2.23149 20.4477 2.23149 21H-1.76851C-1.76851 22.6569 -0.425362 24 1.23149 24V20ZM20.2315 21C20.2315 20.4477 20.6792 20 21.2315 20V24C22.8883 24 24.2315 22.6569 24.2315 21H20.2315ZM21.2315 2C20.6792 2 20.2315 1.55229 20.2315 1H24.2315C24.2315 -0.656855 22.8883 -2 21.2315 -2V2ZM1.23149 -2C-0.425364 -2 -1.76851 -0.656853 -1.76851 1H2.23149C2.23149 1.55228 1.78378 2 1.23149 2V-2Z"
+              />
+            </svg>
+          </div>
+          <div class="menu-infos">
+            <h3>Chicken Tikka Pizza</h3>
+            <h2><span>Rs. </span><strong id="target-chicken">550</strong></h2>
+          </div>
+        </a>
+      </div>
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+        <a class="menu-item" href="#!">
+          <figure>
+            <img src="{% static 'img/Ham-Burger.png' %}" alt="" />
+          </figure>
+          <div class="veg-no">
+            <svg
+              class="nonveg"
+              width="23"
+              height="22"
+              viewBox="0 0 23 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="11.2315" cy="11" r="5" />
+              <path
+                d="M1.23149 2H21.2315V-2H1.23149V2ZM20.2315 1V21H24.2315V1H20.2315ZM21.2315 20H1.23149V24H21.2315V20ZM2.23149 21V1H-1.76851V21H2.23149ZM1.23149 20C1.78378 20 2.23149 20.4477 2.23149 21H-1.76851C-1.76851 22.6569 -0.425362 24 1.23149 24V20ZM20.2315 21C20.2315 20.4477 20.6792 20 21.2315 20V24C22.8883 24 24.2315 22.6569 24.2315 21H20.2315ZM21.2315 2C20.6792 2 20.2315 1.55229 20.2315 1H24.2315C24.2315 -0.656855 22.8883 -2 21.2315 -2V2ZM1.23149 -2C-0.425364 -2 -1.76851 -0.656853 -1.76851 1H2.23149C2.23149 1.55228 1.78378 2 1.23149 2V-2Z"
+              />
+            </svg>
+          </div>
+          <div class="menu-infos">
+            <h3>Classic Burger</h3>
+            <h2><span>Rs. </span><strong>550</strong></h2>
+          </div>
+        </a>
+      </div>
     </div>
   </section>
 </div>

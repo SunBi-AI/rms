@@ -8,8 +8,6 @@ urlpatterns = [
     path("menu/edit/<id>", MenuEdit.as_view(), name="menuedit"),
     path("menu/list", MenuList.as_view(), name="menulist"),
     path("menu/ajax", MenuAjax.as_view(), name="menuajax"),
-
-
     path("menu/<str:category>/", MenuView.as_view(), name="menu_by_category"),
     path("category/", CategoryView.as_view(), name="category"),
     path("category/list/", CategoryListView.as_view(), name="categorylist"),

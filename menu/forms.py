@@ -6,8 +6,6 @@ class MenuForm(forms.ModelForm):
         model = MenuItem
         fields = [
             "items_name",
-            "items_image",
-            "items_description",
             "items_price",
             "items_category",
             "sub_category",

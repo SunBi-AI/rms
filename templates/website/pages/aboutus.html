@@ -1,6 +1,6 @@
 {% extends 'website/base.html' %} 
 {% load static %}
-{% block title %}Home{% endblock title %}
+{% block title %}Mike Resturant - Home{% endblock title %}
 
 {% block content %}
 
@@ -66,15 +66,18 @@
     <div class="row">
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
         <div class="intro__desc">
-          <h2 class="section--title">{{ about_settings.about_title }}</h2>
+          <h2 class="section--title">Welcome to Mike Resturant</h2>
           <p>
-            {{ about_settings.about_description }}
+            Mike Resturant Restaurant is located in 29a Farthing Grove Netherfield
+            Milton Keynes MK6 4JH is the place for you and all you need to do is
+            decide what you want to eat. They have all those favourites pizza
+            such as Pizza American Hot, Pizza Chicken Tikka.
           </p>
         </div>
       </div>
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
         <div class="intro__img">
-          <img src="{{website_logo}}" alt="" />
+          <img src="{% static 'img/logo.svg' %}" alt="" />
         </div>
       </div>
     </div>
@@ -186,7 +189,7 @@
   <section class="team">
     <div class="section--title--wrapper">
       <h2 class="section--title">Our Team</h2>
-      {% comment %} <a class="title--link">
+      <a class="title--link">
         <span>See all</span>
         <svg
           width="24"
@@ -210,43 +213,43 @@
             stroke-linejoin="round"
           />
         </svg>
-      </a> {% endcomment %}
+      </a>
     </div>
     <div class="row">
       <article class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
         <div class="card">
           <div class="card__img">
-            <img src="{{ about_settings.owner_img }}" />
+            <img src="{% static 'img/pp1.png' %}" />
           </div>
-          <h2 class="card__title">{{ about_settings.owner_name }}</h2>
+          <h2 class="card__title">Dan Mc Senna</h2>
           <p>CEO/ Owner</p>
         </div>
       </article>
       <article class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
         <div class="card">
           <div class="card__img">
-            <img src="{{ about_settings.fran_manager_img }}" />
+            <img src="{% static 'img/pp2.png' %}" />
           </div>
-          <h2 class="card__title">{{ about_settings.fran_manager_name }}</h2>
+          <h2 class="card__title">Lauren Wonder</h2>
           <p>Franchise Manager</p>
         </div>
       </article>
       <article class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
         <div class="card">
           <div class="card__img">
-            <img src="{{ about_settings.manager_img }}" />
+            <img src="{% static 'img/pp1.png' %}" />
           </div>
-          <h2 class="card__title">{{ about_settings.manager_name }}</h2>
-          <p>CBranch Manager</p>
+          <h2 class="card__title">Dan Mc Senna</h2>
+          <p>CEO/ Owner</p>
         </div>
       </article>
       <article class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
         <div class="card">
           <div class="card__img">
-            <img src="{{ about_settings.cook_img }}" />
+            <img src="{% static 'img/pp2.png' %}" />
           </div>
-          <h2 class="card__title">{{ about_settings.cook_name }}</h2>
-          <p>Cook</p>
+          <h2 class="card__title">Lauren Wonder</h2>
+          <p>Franchise Manager</p>
         </div>
       </article>
     </div>

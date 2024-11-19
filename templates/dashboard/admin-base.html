@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>{% block title %}{% endblock %}{{website_name}}</title>
+    <title>{% block title %}{% endblock %} - Mike Resturant</title>
     
-    <link rel="shortcut icon" href="{{website_fav}}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{% static 'img/logo.svg' %}" type="image/x-icon" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,7 @@
         <div class="navbar-wrapper">
             <div class="m-header">
                 <a href="" class="b-brand text-primary">
-                 <img src="{{website_logo}}" class="img-fluid logo-lg opacity-100 h-full" alt="logo">
+                 <img src="{% static 'img/logo.svg' %}" class="img-fluid logo-lg opacity-100 h-full" alt="logo">
                 </a>
             </div>
             <div class="navbar-content">
@@ -177,7 +177,7 @@
             <div class="ms-auto">
                 <ul class="list-unstyled">
                     <li class="ps-h-item">
-                        <a href="#" class="ps-head-link me-0" target="_blank">
+                        <a href="{% url 'core:index' %}" class="ps-head-link me-0" target="_blank">
                             <i class="fa fa-globe"></i>
                         </a>
                     </li>

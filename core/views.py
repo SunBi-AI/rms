@@ -8,62 +8,32 @@ from django.db.models import Prefetch, Count
 # Create your views here.
 class FrontPageView(View):
     def get(self, request):
-        menu = MenuItem.objects.all()[:4]  
-        settings = SiteSettings.objects.first() 
-        about_settings = AboutSettings.objects.first()
+        menu = MenuItem.objects.all()[:4]
 
-        context = {
-            'settings': settings,
+        return render(request, 'website/index.html', {
             'menu': menu,
-            'about_settings': about_settings
-        }
-
-        return render(request, 'website/index.html', context)
+        })
 
     
 class BreakfastView(View):
     def get(self, request):
-        breakfast_items = MenuItem.objects.filter(items_category__name__iexact='breakfast')
-        context = {
-            'breakfast_items': breakfast_items
-        }
-        return render(request, 'website/pages/breakfast.html', context)
+        return render(request, 'website/pages/breakfast.html')
     
 class LunchView(View):
     def get(self, request):
-        lunch_items = MenuItem.objects.filter(items_category__name__iexact='lunch')  # Case-insensitive check
-        context = {
-            'lunch_items': lunch_items
-        }
-        return render(request, 'website/pages/lunch.html', context)
-
+        return render(request, 'website/pages/lunch.html')
     
 class DinnerView(View):
     def get(self, request):
-        dinner_items = MenuItem.objects.filter(items_category__name__iexact='dinner')  # Case-insensitive check
-        context = {
-            'dinner_items': dinner_items
-        }
-        return render(request, 'website/pages/dinner.html', context)
-
+        return render(request, 'website/pages/dinner.html')
     
 class DrinksView(View):
     def get(self, request):
-        drinks_items = MenuItem.objects.filter(items_category__name__iexact='drinks')  # Case-insensitive check
-        context = {
-            'drinks_items': drinks_items
-        }
-        return render(request, 'website/pages/drinks.html', context)
-
+        return render(request, 'website/pages/drinks.html')
     
 class AboutUsView(View):
     def get(self, request):
-        about_settings = AboutSettings.objects.first() 
-        context = {
-            'about_settings': about_settings
-        }
-        return render(request, 'website/pages/aboutus.html', context)
-
+        return render(request, 'website/pages/aboutus.html')
 
 class ContactView(View):
     def get(self, request):

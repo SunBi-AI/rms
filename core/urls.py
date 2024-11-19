@@ -4,7 +4,7 @@ from .views import FrontPageView,BreakfastView, LunchView, DinnerView, DrinksVie
 app_name = "core"
 
 urlpatterns = [
-    path('indexxx', FrontPageView.as_view(), name="index"),
+    path('', FrontPageView.as_view(), name="index"),
     path('breakfast/', BreakfastView.as_view(), name="breakfast"),
     path('lunch/', LunchView.as_view(), name="lunch"),
     path('dinner/', DinnerView.as_view(), name="dinner"),
